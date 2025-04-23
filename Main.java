@@ -16,7 +16,9 @@ public class Main
     private static void selectDictionary()
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Выберите словарь:\n1. 4-буквенный\n2. 5-цифровой");
+        System.out.println("Выберите словарь:");
+        System.out.println("1. 4-буквенный");
+        System.out.println("2. 5-цифровой");
         int choice = scanner.nextInt();
         scanner.nextLine();
 

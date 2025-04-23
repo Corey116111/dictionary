@@ -84,7 +84,13 @@ abstract class Dictionary
             }
         }
     }
+    /// значение всегда должно быть строго в кириллице
+    public static boolean isCyrillic(String text)
+    {
+        return text.matches("[а-яА-ЯёЁ\\s]+");
+    }
 
+    protected abstract boolean validateWord(String word);
     public abstract String getName();
     public abstract void addWord(String word, String translation);
 }
