@@ -2,13 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main
-{ // C:\Users\Vitaminez\IdeaProjects\dictionary123\numberDict.txt
-    private enum DictionaryType
-    {
-        FOUR_LETTERS,
-        FIVE_NUMBERS
-    }
-
+{ // C:\Users\Stud\Desktop\dom\dict\Dict1.txt
     private static DictionaryType currentType;
     private static IDictionary currentDictionary;
     private static File dictionaryFile;
@@ -75,7 +69,7 @@ public class Main
     /// загружаем текущий словарь
     private static void loadCurrentDictionary()
     {
-        currentDictionary = (currentType == DictionaryType.FOUR_LETTERS) ? new FourLettersDictionary(dictionaryFile)  : new FiveNumbersDictionary(dictionaryFile); // создаем экземпляр словаря в зависимости от типа
+        currentDictionary = (currentType == DictionaryType.FOUR_LETTERS) ? new FourLettersDictionary(dictionaryFile) : new FiveNumbersDictionary(dictionaryFile);
     }
     /// юзабельное меню
     private static void runMenu()
@@ -131,7 +125,7 @@ public class Main
         }
         else
         {
-            System.out.println("Ошибка: неверный формат ключа или перевода");
+            System.out.println("Ошибка: неверный формат ключа");
         }
     }
     /// удаляем слово по ключу

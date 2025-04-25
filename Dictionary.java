@@ -14,11 +14,6 @@ abstract class Dictionary implements IDictionary
     }
     /// проверяем, подходит ли ключ под требования
     protected abstract boolean checkValidate(String key);
-    /// значение всегда должно быть на русском языке
-    protected boolean validateRussian(String translation)
-    {
-        return translation.matches("[а-яА-ЯёЁ\\s]+");
-    }
     /// загружаем пары ключ-значение из файла
     private void loadFromFile()
     {
@@ -60,7 +55,7 @@ abstract class Dictionary implements IDictionary
     @Override
     public boolean addInDictionary(String wordKey, String translationWord)
     {
-        if (checkValidate(wordKey) && validateRussian(translationWord))
+        if (checkValidate(wordKey))
         {
             entries.put(wordKey, translationWord);
             saveToFile();
